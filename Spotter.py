@@ -11,7 +11,7 @@ exclude = set(string.punctuation)
 my_file = open(sys.argv[1],'r',encoding='utf8')
 result = open(sys.argv[2],'w',encoding='utf8')
 csv_writer = csv.writer(result,dialect='excel',lineterminator='\n')
-csv_writer.writerow(['Mention','Start index','End index','Wikipedia link'])
+csv_writer.writerow(['Mention','Start index','End index','Title','Wikipedia link'])
 data = my_file.read()
 for i in range(1,5):
 	grams = ngrams(data.split(), i)
