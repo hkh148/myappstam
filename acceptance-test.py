@@ -13,4 +13,6 @@ mycursor.execute("SELECT * FROM AnchorTable WHERE Title = 'רבי עקיבא'")
 entries = mycursor.fetchall()
 
 for entry in entries:
-	print(entry[0])
+	print(entry[1], end=" | ")
+	print(entry[2], end=" | ")
+	print(entry[3], end=" | ")
