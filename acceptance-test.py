@@ -16,3 +16,4 @@ for entry in entries:
 	print(entry[1], end=" | ")
 	print(entry[2], end=" | ")
 	print(entry[3], end=" | ")
+	print()
