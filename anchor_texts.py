@@ -4,9 +4,9 @@ import mysql.connector
 
 mydb = mysql.connector.connect(
     host="localhost",
-    user="",
-    passwd="",
-    database=""
+    user="root",
+    passwd="203761333",
+    database="projectdb"
 )
 
 mycursor = mydb.cursor()
@@ -40,9 +40,9 @@ for event, elem in ET.iterparse('hewiki-20180201-pages-articles.xml', events=("s
             page_name = page_name.decode('utf-8')
             anchor_text = anchor_text.encode()
             anchor_text = anchor_text.decode('utf-8')
-            link = 'https://he.wikipedia.org/wiki//' + str(page_name)
+            link = 'https://he.wikipedia.org/wiki/' + str(page_name)
             anchors += [page_name, anchor_text, str(taken_from)]
-            print('link: ' + link + ' ,' + ' page name: ' + page_name + ',' + ' anchor text: ' + anchor_text + ',' + ' taken from: ' + taken_from)
+            #print('link: ' + link + ' ,' + ' page name: ' + page_name + ',' + ' anchor text: ' + anchor_text + ',' + ' taken from: ' + taken_from)
             # mycursor.fetchall()
             query_insert = 'INSERT IGNORE INTO AnchorTable (Link, Title, Alias, Taken_From) VALUES (%s, %s, %s, %s)'
             val_insert = (link, page_name, anchor_text, taken_from)
