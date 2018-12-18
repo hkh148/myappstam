@@ -27,5 +27,6 @@ for i in range(1,5):
 		for entry in entries:
 			tmp_row = [word,start_index,start_index+i-1,entry[1],entry[0]]
 			csv_writer.writerow(tmp_row)
+		start_index+=1
 my_file.close()
 result.close()
